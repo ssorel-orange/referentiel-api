@@ -12,17 +12,9 @@ pipeline {
                 sh "pwd"
                 sh "ls -a"
                 sh "docker build ./ -t referentiel_api_:${env.BUILD_ID}"
-            }
-            
+            }    
         }
-        stage('Launch Application'){
-           steps {
-                sh "pwd"
-                sh "ls -a"
-                sh "docker run -d -p 9093:9091 --name referentiel_api_${env.BUILD_ID} referentiel_api_:${env.BUILD_ID}"
-            }
-            
-        }
+       
     }
 }
 
