@@ -11,7 +11,7 @@ pipeline {
                 step ([$class: 'CopyArtifact', projectName: 'Referentiel_Api_build', filter: 'target/referentiel-api*.jar']);
                 sh "pwd"
                 sh "ls -a"
-                sh "docker build ./ -t referentiel_api_:${env.BUILD_ID}"
+                sh "docker build ./ -t referentiel_api:${env.BUILD_ID}"
             }    
         }
        
